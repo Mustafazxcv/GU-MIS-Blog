@@ -2,6 +2,8 @@
 
 Gümüşhane Üniversitesi Yönetim Bilişim Sistemleri İçin Geliştirilen Blog Sitesi
 
+**Buradaki dosyalar inceleme amaçlıdır. Kullanım İçin Repomu Ziyaret [Ediniz](https://github.com/Mustafazxcv/GU-MIS-Blog-ZIP)**
+
 **Veritabanı Bağlantıları İçin Diğer Repomu Ziyaret [Ediniz](https://github.com/Mustafazxcv/php-pdo-database)**
 
 # Alan Adı
