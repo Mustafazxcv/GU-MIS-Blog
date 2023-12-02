@@ -1,0 +1,20 @@
+[10-Oct-2023 17:15:47 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/gum3abomtr/public_html/includes/form_handler/login.php:3
+Stack trace:
+#0 /home/gum3abomtr/public_html/includes/form_handler/login.php(3): mysqli->__construct('localhost', 'root', '', 'revive')
+#1 {main}
+  thrown in /home/gum3abomtr/public_html/includes/form_handler/login.php on line 3
+[10-Oct-2023 17:16:03 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/gum3abomtr/public_html/includes/form_handler/login.php:3
+Stack trace:
+#0 /home/gum3abomtr/public_html/includes/form_handler/login.php(3): mysqli->__construct('localhost', 'root', '', 'revive')
+#1 {main}
+  thrown in /home/gum3abomtr/public_html/includes/form_handler/login.php on line 3
+[10-Oct-2023 17:16:33 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/gum3abomtr/public_html/includes/form_handler/login.php:3
+Stack trace:
+#0 /home/gum3abomtr/public_html/includes/form_handler/login.php(3): mysqli->__construct('localhost', 'root', '', 'revive')
+#1 {main}
+  thrown in /home/gum3abomtr/public_html/includes/form_handler/login.php on line 3
+[10-Oct-2023 17:21:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/gum3abomtr/public_html/includes/form_handler/login.php:3
+Stack trace:
+#0 /home/gum3abomtr/public_html/includes/form_handler/login.php(3): mysqli->__construct('localhost', 'root', '', 'revive')
+#1 {main}
+  thrown in /home/gum3abomtr/public_html/includes/form_handler/login.php on line 3
