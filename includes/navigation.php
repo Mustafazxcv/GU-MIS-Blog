@@ -1,179 +1,85 @@
-<?php include 'includes/db.php'; ?>
-<?php
-$query = "select * from about";
-$result = mysqli_query($connection, $query);
-while ($row = mysqli_fetch_assoc($result)) {
-  $facebook             = $row["facebook"];
-  $twitter              = $row["twitter"];
-  $instagram            = $row["instagram"];
-  $youtube              = $row["youtube"];
-}
-?>
-<body class="hero-anime">
-    <div class="navigation-wrap bg-light start-header start-style">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="index.php">GU-MIS</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ml-auto py-4 py-md-0">
-                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="index.php">Ana Sayfa</a>
-                                </li>
-                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="contact.php">İletişim</a>
-                                </li>
-                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="update.php">Güncellemeler</a>
-                                </li>
-                                <?php
-                                if (isset($_SESSION['kadi'])) {
-                                    // Kullanıcı giriş yapmışsa, kullanıcı adını göster ve çıkış yap bağlantısını ekle
-									echo '<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">';
-                                    echo '<a class="nav-link" href="#">' . $_SESSION['kadi'] . '</a>';
-                                    echo '</li>';
-									echo '<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">';
-                                    echo '<a class="nav-link" href="cikisyap.php">Çıkış Yap</a>';
-                                    echo '</li>';
-                                } else {
-                                    // Kullanıcı giriş yapmamışsa, "Giriş Yap" ve "Kayıt Ol" bağlantılarını göster
-                                    echo '<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">';
-                                    echo '<a class="nav-link" href="kayitol.php">Kayıt Ol</a>';
-                                    echo '</li>';
-                                    echo '<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">';
-                                    echo '<a class="nav-link" href="girisyap.php">Giriş Yap</a>';
-                                    echo '</li>';
-                                }
-                                ?>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Gezinmeyi Aç</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.php">Admin</a>
     </div>
-</body>
-<style>
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+    <!-- Top Menu Items -->
+    <ul class="nav navbar-right top-nav">
+        <li><a href="../index.php">Siteye Git</a></li>
 
-.navbar-brand {
-    font-weight: bold;
-    color: purple;
-}
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Kullanıcı; <?php echo $username; ?><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li>
+                    <a href="index.php?logout"><i class="fa fa-fw fa-power-off"></i> Çıkış</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav side-nav">
+            <li>
+                <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Panel</a>
+            </li>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-send"></i> Gönderiler <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="demo" class="collapse">
+                    <li>
+                        <a href="posts.php?source=">Gönderilere Bak</a>
+                    </li>
+                    <li>
+                        <a href="posts.php?source=add_new">Yeni Gönderi Ekle</a>
+                    </li>
 
+                </ul>
+            </li>
+            <li>
+                <a href="categories.php"><i class="fa fa-fw fa-suitcase"></i> Kategorilier</a>
+            </li>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#slider"><i class="fa fa-fw fa-send"></i> Sliderlar <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="slider" class="collapse">
+                    <li>
+                        <a href="slider.php?source=">Sliderlara Bak</a>
+                    </li>
+                    <li>
+                        <a href="slider.php?source=add_new">Yeni Slider Ekle</a>
+                    </li>
 
-.start-header {
-	opacity: 1;
-	transform: translateY(0);
-	padding: 20px 0;
-	box-shadow: 0 10px 30px 0 rgba(138, 155, 165, 0.15);
-	-webkit-transition : all 0.3s ease-out;
-	transition : all 0.3s ease-out;
-}
-.start-header.scroll-on {
-	box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
-	padding: 10px 0;
-	-webkit-transition : all 0.3s ease-out;
-	transition : all 0.3s ease-out;
-}
+                </ul>
+            </li>
+            <li>
+                <a href="comment.php"><i class="fa fa-fw fa-comment"></i> Yorumlar </a>
+            </li>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-users"></i> Kullanıcılar <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="users" class="collapse">
+                    <li>
 
-.navigation-wrap{
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-	-webkit-transition : all 0.3s ease-out;
-	transition : all 0.3s ease-out;
-}
-.navbar{
-	padding: 0;
-}
+                        <a href="view_users.php">Kullanıcıları Görüntüle</a>
+                    </li>
+                    <li>
+                        <a href="users.php?source=add_user">Yeni Kullanıcı Ekle</a>
+                    </li>
 
-.navbar-toggler {
-	float: right;
-	border: none;
-	padding-right: 0;
-}
-.navbar-toggler:active,
-.navbar-toggler:focus {
-	outline: none;
-}
-.navbar-light .navbar-toggler-icon {
-	width: 24px;
-	height: 17px;
-	background-image: none;
-	position: relative;
-	border-bottom: 1px solid #000;
-    transition: all 300ms linear;
-}
-.navbar-light .navbar-toggler-icon:after, 
-.navbar-light .navbar-toggler-icon:before{
-	width: 24px;
-	position: absolute;
-	height: 1px;
-	background-color: #000;
-	top: 0;
-	left: 0;
-	content: '';
-	z-index: 2;
-    transition: all 300ms linear;
-}
-.navbar-light .navbar-toggler-icon:after{
-	top: 8px;
-}
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-	transform: rotate(45deg);
-}
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-	transform: translateY(8px) rotate(-45deg);
-}
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-	border-color: transparent;
-}
-.nav-link{
-	color: #212121 !important;
-	font-weight: 500;
-    transition: all 200ms linear;
-}
-.nav-item:hover .nav-link{
-	color: #8167a9 !important;
-}
-.nav-item.active .nav-link{
-	color: #777 !important;
-}
-.nav-link {
-	position: relative;
-	padding: 5px 0 !important;
-	display: inline-block;
-}
-.nav-item:after{
-	position: absolute;
-	bottom: -5px;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	content: '';
-	background-color: #8167a9;
-	opacity: 0;
-    transition: all 200ms linear;
-}
-.nav-item:hover:after{
-	bottom: 0;
-	opacity: 1;
-}
-.nav-item.active:hover:after{
-	opacity: 0;
-}
-.nav-item{
-	position: relative;
-    transition: all 200ms linear;
-}
-
-</style>
-</body>
+                </ul>
+            </li>
+            <li>
+                <a href="contact.php"><i class="fa fa-fw fa-user"></i> İletişim</a>
+            </li>
+            <li>
+                <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profil</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+</nav>
+<script src="bootstrap/js/jquery.js"></script>
