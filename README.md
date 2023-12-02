@@ -6,4 +6,6 @@ Gümüşhane Üniversitesi Yönetim Bilişim Sistemleri İçin Geliştirilen Blo
 
 # Alan Adı
 
-**[](gumis.com.tr)**
+**[Link](gumis.com.tr)**
+
+**gumis.com.tr**
