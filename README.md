@@ -2,10 +2,8 @@
 
 Gümüşhane Üniversitesi Yönetim Bilişim Sistemleri İçin Geliştirilen Blog Sitesi
 
-**Veritabanı Bağlantıları İçin Diğer Repomu Ziyaret [Ediniz](gumis.com.tr)**
+**Veritabanı Bağlantıları İçin Diğer Repomu Ziyaret [Ediniz](https://github.com/Mustafazxcv/php-pdo-database)**
 
 # Alan Adı
-
-**[Link](gumis.com.tr)**
 
 **gumis.com.tr**
