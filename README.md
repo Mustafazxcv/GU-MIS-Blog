@@ -30,9 +30,7 @@ public_html2 dosya dizini içerisinde ayar.php isminde veritabanı bağlantısı
 
 **SQL İnjection için token sistemi kullanılmaktadır.**
 
-**Kullanıcı kayıt (Register)(Login) işlemleri bulunmaktadır.**
-
-**SEO Optimizasyonu.**
+**Kullanıcı kayıt (Register Login) işlemleri bulunmaktadır.**
 
 **Site içerisinde bulunan, postlarda kullanılan etiketlere özel arama motoru.**
 
@@ -64,4 +62,3 @@ public_html2 dosya dizini içerisinde ayar.php isminde veritabanı bağlantısı
 
 **Admin kullanıcısı ekleyebilme, silebilme, profil fotografını ayarlayabilme, şifre degiştirebilme ve Yönetici veya Editör olarak oluşturabilme.**
 
-**Ve çok daha fazlası...**
